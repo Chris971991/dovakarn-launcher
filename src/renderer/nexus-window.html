@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; font-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Nexus Mods for Dovakarn</title>
+  <link rel="stylesheet" href="nexus-window.css">
+</head>
+<body>
+  <section class="strip" id="strip" aria-label="Downloading Dovakarn's mods from Nexus Mods">
+    <header class="bar">
+      <strong class="brand">DOVAKARN</strong>
+      <span class="bar-title">Mods from Nexus Mods</span>
+      <span class="chip" id="chip" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg><span id="chip-text"></span></span>
+      <button id="nx-logout" class="link" hidden>Log out of Nexus</button>
+      <div class="window-controls">
+        <button id="nx-minimize" aria-label="Minimize the launcher and this window"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+        <button id="nx-close" aria-label="Close the Nexus window"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+      </div>
+    </header>
+    <div class="mod" id="mod">
+      <div class="mod-info"><p class="mod-count" id="mod-count"></p><h1 class="mod-name" id="mod-name"></h1><p class="mod-meta" id="mod-meta"></p></div>
+      <div class="mod-actions">
+        <button id="nx-login" class="primary" hidden>Log in to Nexus</button>
+        <button id="nx-skip" class="secondary">Next mod</button>
+        <button id="nx-browser" class="secondary">Open in my browser</button>
+      </div>
+    </div>
+    <div class="say" id="say">
+      <span class="spinner" id="say-busy" aria-hidden="true" hidden></span>
+      <svg class="tone tone--info" id="say-info" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+      <svg class="tone tone--alert" id="say-alert" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+      <svg class="tone tone--ok" id="say-ok" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M20 6 9 17l-5-5"/></svg>
+      <p id="say-text" role="status" aria-live="polite"></p>
+      <button id="nx-retry" class="secondary" hidden>Try again</button>
+      <button id="nx-back" class="secondary" hidden>Back to the mod</button>
+      <!-- An adult mod's note: a line of the instruction row, under the instruction, not a box of its own -->
+      <div class="adult" id="adult" hidden>
+        <svg class="tone tone--alert" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+        <p id="adult-text"></p>
+        <button id="nx-settings" class="secondary">Open my Nexus settings</button>
+      </div>
+    </div>
+    <div class="meter" id="meter" role="progressbar" aria-labelledby="say-text" aria-valuemin="0" aria-valuemax="100" hidden><i></i></div>
+  </section>
+  <script src="nexus-window.js"></script>
+</body>
+</html>

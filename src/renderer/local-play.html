@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' https://cdn.discordapp.com; object-src 'none'; base-uri 'none'">
+  <title>Dovakarn Launcher</title>
+  <link rel="stylesheet" href="local-play.css">
+</head>
+<body>
+  <video class="atmosphere" src="assets/dovakarn-sky.webm" poster="assets/dovakarn-sky.webp" autoplay muted loop playsinline disablepictureinpicture aria-hidden="true"></video>
+  <div class="shade"></div>
+  <header>
+    <strong>DOVAKARN</strong>
+    <span class="window-title" id="window-mode"></span>
+    <div class="header-actions">
+      <div class="account" id="account" hidden>
+        <button id="account-login" class="header-button header-button--discord" aria-label="Log in with Discord" hidden>
+          <svg class="discord-logo" viewBox="0 0 127.14 96.36" aria-hidden="true"><path d="M107.7,8.07A105.15,105.15,0,0,0,81.47,0a72.06,72.06,0,0,0-3.36,6.83A97.68,97.68,0,0,0,49,6.83,72.37,72.37,0,0,0,45.64,0,105.89,105.89,0,0,0,19.39,8.09C2.79,32.65-1.71,56.6.54,80.21h0A105.73,105.73,0,0,0,32.71,96.36,77.7,77.7,0,0,0,39.6,85.25a68.42,68.42,0,0,1-10.85-5.18c.91-.66,1.8-1.34,2.66-2a75.57,75.57,0,0,0,64.32,0c.87.71,1.76,1.39,2.66,2a68.68,68.68,0,0,1-10.87,5.19,77,77,0,0,0,6.89,11.1A105.25,105.25,0,0,0,126.6,80.22h0C129.24,52.84,122.09,29.11,107.7,8.07ZM42.45,65.69C36.18,65.69,31,60,31,53s5-12.74,11.43-12.74S54,46,53.89,53,48.84,65.69,42.45,65.69Zm42.24,0C78.41,65.69,73.25,60,73.25,53s5-12.74,11.44-12.74S96.23,46,96.12,53,91.08,65.69,84.69,65.69Z"/></svg><span class="label">Log in with Discord</span></button>
+        <span id="account-waiting" class="account-waiting" role="status" hidden><span class="account-spinner" aria-hidden="true"></span>Waiting for Discord...<button id="account-cancel" class="link">Cancel</button></span>
+        <button id="account-chip" class="account-chip" hidden><img id="account-avatar" alt="" width="30" height="30" hidden><span id="account-initial" class="account-initial" aria-hidden="true" hidden></span><span id="account-name"></span><span id="account-number" class="account-number"></span><span id="account-badge" class="account-badge" hidden></span></button>
+      </div>
+      <button id="verify" class="header-button" title="Check your game files and mods">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1.5 2.5 3.5v4c0 3.3 2.4 6 5.5 7 3.1-1 5.5-3.7 5.5-7v-4Z"/><path d="m5.5 8 1.8 1.8L10.8 6.3"/></svg>Verify</button>
+      <button id="settings-open" class="header-button">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="2.2"/><path d="M8 1.5v2M8 12.5v2M1.5 8h2M12.5 8h2M3.4 3.4l1.4 1.4M11.2 11.2l1.4 1.4M3.4 12.6l1.4-1.4M11.2 4.8l1.4-1.4"/></svg>Settings</button>
+    </div>
+    <div class="window-controls">
+      <button id="minimize" aria-label="Minimize launcher"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/></svg></button>
+      <button id="close" aria-label="Close launcher"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg></button>
+    </div>
+  </header>
+  <main>
+    <div class="art"><img class="emblem" src="assets/dovakarn-emblem.png" alt="Dovakarn dragon shield"><div class="mist" aria-hidden="true"><i></i><i></i><i></i></div><p class="motto">Sky above. Voice within.</p></div>
+    <div class="journey">
+      <h1 id="world-name" class="visually-hidden">Dovakarn</h1>
+      <section class="updates" id="updates" aria-labelledby="updates-title">
+        <h2 id="updates-title">Latest updates</h2>
+        <ol class="updates-list" id="updates-list"></ol>
+        <p class="updates-note" id="updates-note" role="status">Loading the latest updates...</p>
+      </section>
+      <div class="journey-foot">
+        <div class="server-line offline" id="server-line"><span class="status-light" aria-hidden="true"></span><span id="server">Checking server...</span></div>
+        <div class="population" id="population" hidden>
+          <p class="population-head" aria-hidden="true"><span>Players in the world</span><span class="population-count"><strong id="population-now">0</strong><span id="population-of"> of <span id="population-max"></span></span></span></p>
+          <div class="capacity" id="capacity" role="meter" aria-label="Players in the world" aria-valuemin="0"><i id="capacity-fill"></i></div>
+        </div>
+        <section id="notice" class="notice" aria-live="polite" hidden>
+          <div class="notice-head">
+            <svg class="tone-icon tone-icon--alert" viewBox="0 0 24 24" aria-hidden="true"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
+            <svg class="tone-icon tone-icon--info" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+            <h2 id="notice-title"></h2>
+          </div>
+          <p id="notice-text"></p>
+          <div class="notice-actions"><button id="notice-primary" class="secondary"></button><button id="notice-secondary" class="link"></button></div>
+        </section>
+        <section id="progress" class="progress-card" aria-labelledby="progress-title" hidden>
+          <div class="progress-head"><h2 id="progress-title"></h2><span class="progress-pct" id="progress-pct" aria-hidden="true"></span></div>
+          <div class="progress-track" id="progress-track" role="progressbar" aria-labelledby="progress-title" aria-valuemin="0" aria-valuemax="100"><i></i></div>
+          <div class="progress-foot"><p class="progress-detail"><span id="progress-detail"></span><span id="progress-eta"></span></p><button id="progress-cancel" class="link" hidden>Cancel</button></div>
+        </section>
+        <p id="message" role="status" aria-live="polite">Preparing launcher...</p>
+        <button id="play" class="primary" disabled>Checking...</button>
+      </div>
+    </div>
+  </main>
+  <footer><span class="private" id="footer-private" hidden><span id="footer-version"></span><span class="diamond" aria-hidden="true"></span><span id="footer-world"></span></span></footer>
+
+  <div id="settings" class="modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+    <section class="modal-box modal-box--settings">
+      <div class="settings-head"><h2 id="settings-title">Settings</h2><span class="settings-meta" id="launcher-version"></span></div>
+      <div class="settings-body">
+        <nav class="tabs" role="tablist" aria-label="Settings" aria-orientation="vertical">
+          <button role="tab" id="tab-account-button" data-tab="account" aria-controls="tab-account" aria-selected="false" tabindex="-1">Account</button>
+          <button role="tab" id="tab-game-button" data-tab="game" aria-controls="tab-game" aria-selected="true">Game</button>
+          <button role="tab" id="tab-controls-button" data-tab="controls" aria-controls="tab-controls" aria-selected="false" tabindex="-1">Controls</button>
+          <button role="tab" id="tab-mods-button" data-tab="mods" aria-controls="tab-mods" aria-selected="false" tabindex="-1">Mods</button>
+          <button role="tab" id="tab-updates-button" data-tab="updates" aria-controls="tab-updates" aria-selected="false" tabindex="-1">Updates</button>
+        </nav>
+        <div class="tab-panels">
+          <p class="line muted" id="settings-loading" hidden>Loading...</p>
+          <div class="tab-panel" id="tab-account" role="tabpanel" aria-labelledby="tab-account-button" tabindex="0" hidden>
+            <h3>Discord</h3>
+            <div class="account-card" id="account-card" hidden><img id="account-card-avatar" alt="" width="56" height="56" hidden><div><strong id="account-card-name"></strong><span id="account-card-line"></span></div></div>
+            <p class="line" id="account-note"></p>
+            <dl class="facts" id="account-facts" hidden>
+              <div><dt>Account number</dt><dd id="account-fact-number"></dd></div>
+              <div><dt>Dovakarn Discord</dt><dd id="account-fact-member"></dd></div>
+              <div id="account-fact-staff-row"><dt>Staff</dt><dd id="account-fact-staff"></dd></div>
+              <div><dt>Characters</dt><dd id="account-fact-slots"></dd></div>
+            </dl>
+            <p class="line muted" id="account-number-note" hidden>Your account number is how the staff find you. It shows above your head in the game.</p>
+            <div class="button-row"><button id="account-settings-login" class="secondary" hidden>Log in with Discord</button><button id="account-discord" class="secondary" hidden>Open the Dovakarn Discord</button><button id="account-logout" class="secondary" hidden>Log out</button></div>
+          </div>
+          <div class="tab-panel" id="tab-game" role="tabpanel" aria-labelledby="tab-game-button" tabindex="0">
+            <div id="copy-section" hidden>
+              <h3>Dovakarn</h3>
+              <div class="field-row"><div class="folder-path"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span id="copy-path"></span></div><button id="copy-open" class="secondary">Open</button><button id="copy-remove" class="secondary">Remove</button></div>
+              <ul class="ticks" id="copy-ticks"></ul>
+              <p class="line muted" id="copy-note"></p>
+              <div class="button-row" id="copy-setup-row" hidden><button id="copy-setup" class="secondary">Set up Dovakarn</button></div>
+            </div>
+            <h3 id="folder-heading">Skyrim folder</h3>
+            <p class="line muted" id="folder-note" hidden></p>
+            <div class="field-row"><div class="folder-path"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span id="folder-path"></span></div><button id="open-folder" class="secondary">Open</button><button id="folder-change" class="secondary">Change</button></div>
+            <ul class="ticks" id="folder-ticks"></ul>
+            <div class="button-row" id="folder-switch-row" hidden><button id="folder-switch" class="secondary"></button></div>
+            <div class="button-row" id="restore-row" hidden><button id="restore-skyrim" class="secondary">Put my Skyrim back</button></div>
+            <p class="line" id="restore-status" role="status" hidden></p>
+            <h3>Server</h3>
+            <dl class="facts">
+              <div><dt>Name</dt><dd id="server-name">Dovakarn</dd></div>
+              <div><dt>Address</dt><dd id="server-address"></dd></div>
+              <div><dt>Status</dt><dd id="server-status"></dd></div>
+              <div><dt>Players</dt><dd id="server-players"></dd></div>
+            </dl>
+          </div>
+          <div class="tab-panel" id="tab-controls" role="tabpanel" aria-labelledby="tab-controls-button" tabindex="0" hidden>
+            <p class="line muted" id="controls-intro">Keys for Dovakarn and the mods it uses. Every other mod setting is set by the server, and the launcher puts it back if it changes. Your keys are applied the next time you press Play.</p>
+            <div id="controls-groups"></div>
+            <p class="line controls-status" id="controls-status" role="status" aria-live="polite"></p>
+            <div class="button-row" id="controls-actions"><button id="controls-reset" class="secondary">Reset all keys</button></div>
+          </div>
+          <div class="tab-panel" id="tab-mods" role="tabpanel" aria-labelledby="tab-mods-button" tabindex="0" hidden>
+            <h3 id="mods-heading">Mod collection</h3>
+            <p class="line" id="mods-collection"></p>
+            <div class="button-row"><button id="mods-get" class="secondary">Get the Dovakarn collection</button><button id="mods-details" class="secondary">See what's missing</button></div>
+            <div id="nexus-section" hidden>
+              <h3>Nexus Mods</h3>
+              <!-- The player's Nexus account: with Nexus Premium the mods download by themselves -->
+              <p class="line" id="nexus-me"></p>
+              <div class="button-row" id="nexus-me-row"><button id="nexus-me-login" class="secondary">Log in to Nexus</button><button id="nexus-me-cancel" class="secondary" hidden>Cancel</button><button id="nexus-me-logout" class="secondary" hidden>Log out of Nexus</button></div>
+              <p class="line" id="nexus-me-status" role="status" aria-live="polite"></p>
+              <!-- The Nexus window's own login, kept on this PC by its Nexus page -->
+              <h3>Nexus window</h3>
+              <p class="line" id="nexus-account"></p>
+              <div class="button-row" id="nexus-logout-row"><button id="nexus-logout" class="secondary">Log out of the Nexus window</button></div>
+              <p class="line muted" id="nexus-logout-why" hidden>You can log out once the current download finishes.</p>
+              <p class="line" id="nexus-status" role="status" aria-live="polite"></p>
+            </div>
+            <div id="folders-section" hidden>
+              <h3>Your mod folders</h3>
+              <p class="line muted">The launcher also looks for the mods' downloads in these folders. It only reads them.</p>
+              <ul class="folders" id="mods-folders"></ul>
+            </div>
+            <!-- Outside the section, so "no longer looks in" still shows once the last folder is forgotten and the section goes -->
+            <p class="line" id="folders-status" role="status" aria-live="polite"></p>
+            <h3>Game files</h3>
+            <p class="line" id="mods-list"></p>
+            <p class="line" id="mods-last"></p>
+            <div class="button-row"><button id="mods-check" class="secondary">Check now</button></div>
+          </div>
+          <div class="tab-panel" id="tab-updates" role="tabpanel" aria-labelledby="tab-updates-button" tabindex="0" hidden>
+            <h3>Game files</h3>
+            <p class="line" id="updates-version"></p>
+            <p class="line muted" id="updates-files-note">Your game files and the mod collection are checked every time the launcher opens and again before every game. Anything that changed is fixed for you or shown on the main screen.</p>
+            <div class="button-row"><button id="updates-check" class="secondary">Check now</button></div>
+            <h3>Launcher</h3>
+            <p class="line" id="updates-launcher"></p>
+            <p class="line" id="updates-available" hidden></p>
+            <div class="progress-track progress-track--small" id="updates-track" role="progressbar" aria-label="Launcher update" aria-valuemin="0" aria-valuemax="100" hidden><i></i></div>
+            <div class="button-row"><button id="updates-launcher-check" class="secondary">Check for a launcher update</button><button id="updates-install" class="secondary" hidden>Update the launcher</button></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-actions modal-actions--end"><button id="settings-done" class="secondary">Done</button></div>
+    </section>
+  </div>
+
+  <div id="checks" class="modal" role="dialog" aria-modal="true" aria-labelledby="checks-title" hidden>
+    <section class="modal-box">
+      <h2 id="checks-title">All good</h2>
+      <p id="checks-summary"></p>
+      <ul class="checks" id="checks-list"></ul>
+      <div class="modal-actions">
+        <button id="checks-collection" class="primary">Get the Dovakarn collection</button>
+        <button id="checks-again" class="secondary">Check again</button>
+        <button id="checks-close" class="secondary">Close</button>
+      </div>
+    </section>
+  </div>
+
+  <div id="setup" class="modal" role="dialog" aria-modal="true" aria-labelledby="setup-title" hidden>
+    <section class="modal-box modal-box--setup">
+      <h2 id="setup-title">Set up Dovakarn</h2>
+      <p class="line">Dovakarn plays from its own copy of Skyrim, so your own Skyrim and its mods stay exactly as they are.</p>
+      <h3>Where</h3>
+      <div class="field-row"><div class="folder-path"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg><span id="setup-path"></span></div><button id="setup-change" class="secondary">Change</button></div>
+      <p class="line muted" id="setup-space"></p>
+      <h3>Skyrim 1.6.1170</h3>
+      <p class="line" id="setup-source"></p>
+      <ol class="depots" id="setup-depots" hidden></ol>
+      <div class="button-row" id="setup-console-row" hidden><button id="setup-console" class="secondary">Open Steam's console</button></div>
+      <p class="line setup-status" id="setup-status" role="status" aria-live="polite"></p>
+      <div class="modal-actions"><button id="setup-install" class="primary">Install</button><button id="setup-close" class="secondary">Close</button></div>
+    </section>
+  </div>
+
+  <div id="mods" class="modal" role="dialog" aria-modal="true" aria-labelledby="mods-title" hidden>
+    <section class="modal-box modal-box--mods">
+      <!-- The other folder link sits in the title row and the status beside its browser button, so the list keeps its rows -->
+      <div class="mods-head"><h2 id="mods-title">Mods to download</h2><div class="mods-more" id="mods-more"><button id="mods-folder" class="link">My mods are in another folder</button></div></div>
+      <p class="line" id="mods-intro">Press Download them all and Nexus opens inside the launcher. Log in once. A free account works. Then press Slow download for each mod, and the launcher takes each file by itself.</p>
+      <!-- Nexus Premium: logged in to Nexus, the mods download by themselves -->
+      <div class="mods-premium" id="mods-premium" hidden><p class="line" id="mods-premium-line"></p><button id="mods-premium-login" class="secondary">Log in to Nexus</button></div>
+      <ul class="checks mods-needed" id="mods-needed"></ul>
+      <div class="mods-status-row"><p class="line" id="mods-status" role="status" aria-live="polite"></p><button id="mods-browser-open" class="secondary" hidden>Open in my browser</button><button id="mods-window" class="secondary" hidden>Use the Nexus window</button></div>
+      <div class="modal-actions"><button id="mods-all" class="primary">Download them all</button><button id="mods-stop" class="secondary" hidden>Stop</button><button id="mods-again" class="secondary" title="Downloaded some in your own browser? Press Check my downloads and the launcher picks them up.">Check my downloads</button><button id="mods-close" class="secondary">Close</button></div>
+    </section>
+  </div>
+
+  <script src="local-play-effects.js"></script>
+  <script src="local-play.js"></script>
+</body>
+</html>

@@ -1,0 +1,297 @@
+{
+  "note": "Skyrim Special Edition 1.6.1170.0 on Steam (app 489830): every file of its three depots, hashed from download_depot output and checked byte for byte against a clean 1.6.1170 install. No game file ships with the launcher, only these numbers.",
+  "app": "489830",
+  "exeVersion": "1.6.1170.0",
+  "depots": [
+    {
+      "id": "489831",
+      "manifest": "8442952117333549665"
+    },
+    {
+      "id": "489832",
+      "manifest": "8042843504692938467"
+    },
+    {
+      "id": "489833",
+      "manifest": "1914580699073641964"
+    }
+  ],
+  "files": [
+    {
+      "path": "bink2w64.dll",
+      "depot": "489832",
+      "size": 391360,
+      "sha256": "653247e35db8d6453e83a008c805a877fd2d56a1d844282f9065ce2f34388fec"
+    },
+    {
+      "path": "Data/_ResourcePack.bsa",
+      "depot": "489831",
+      "size": 916509890,
+      "sha256": "83a241c400a8f41d289ce4d99c278926a3a4fcb72ed341e1ef7e983ad61d24f8"
+    },
+    {
+      "path": "Data/_ResourcePack.esl",
+      "depot": "489831",
+      "size": 78418,
+      "sha256": "d231915a4bbfe6e89536dfb0a46c5adc8e4d2d23ce95d248dc24943776eb76fb"
+    },
+    {
+      "path": "Data/ccBGSSSE001-Fish.bsa",
+      "depot": "489831",
+      "size": 377675522,
+      "sha256": "b865e8187bac934042ba0051121e6f8ba0cb9fef919a81f72b97dbb012dad7dc"
+    },
+    {
+      "path": "Data/ccBGSSSE001-Fish.esm",
+      "depot": "489831",
+      "size": 1425176,
+      "sha256": "0036c3bb38754d1681529f6f828987506efbecc97fe6008753ac05e7c6738fff"
+    },
+    {
+      "path": "Data/ccBGSSSE025-AdvDSGS.bsa",
+      "depot": "489831",
+      "size": 1092876237,
+      "sha256": "7cbc4cb0e167236628a236059c4886ce0e089b661b3a612f012728a75fd468a3"
+    },
+    {
+      "path": "Data/ccBGSSSE025-AdvDSGS.esm",
+      "depot": "489831",
+      "size": 812873,
+      "sha256": "070784062525ac872b98503cf60918bcd7e7b8aede7fcedd86839a57467add5b"
+    },
+    {
+      "path": "Data/ccBGSSSE037-Curios.bsa",
+      "depot": "489831",
+      "size": 111740475,
+      "sha256": "641aef57b1123cef59a78dde6fc3eeca796a858615b9655b098e283a8dc62aa6"
+    },
+    {
+      "path": "Data/ccBGSSSE037-Curios.esl",
+      "depot": "489831",
+      "size": 37476,
+      "sha256": "75209dbb177ea27f3abd164b6ecf07670ecdc3858cc01e4a3db8d1e2443136fe"
+    },
+    {
+      "path": "Data/ccQDRSSE001-SurvivalMode.bsa",
+      "depot": "489831",
+      "size": 12835601,
+      "sha256": "d951bdc12270e121924702c61e80c05936982d049ed664e169e0f897d5669112"
+    },
+    {
+      "path": "Data/ccQDRSSE001-SurvivalMode.esl",
+      "depot": "489831",
+      "size": 240724,
+      "sha256": "0aeb0734128137f77fed4c2c329fd4ce71a4d043a2093871886ad84e5821ac47"
+    },
+    {
+      "path": "Data/Dawnguard.esm",
+      "depot": "489832",
+      "size": 25885111,
+      "sha256": "1bda804009a21228acf6b30aa6aa7a692b247ff8a0313fe9aa69b3617ed4a6c4"
+    },
+    {
+      "path": "Data/Dragonborn.esm",
+      "depot": "489832",
+      "size": 64663863,
+      "sha256": "5f44f343552688c04f73bf83de58b90f70c7376b133fbbcb56b6fe33acf8778b"
+    },
+    {
+      "path": "Data/HearthFires.esm",
+      "depot": "489832",
+      "size": 3977420,
+      "sha256": "ad4ca9f32c81e7ddd3e39ec95e03b07841f20712989e598778442ea69b6e6a97"
+    },
+    {
+      "path": "Data/MarketplaceTextures.bsa",
+      "depot": "489831",
+      "size": 2938167,
+      "sha256": "b4e227fed1e2b033f7dbb1d1a9e4424031edee42c9397e8964f21c9ff676a45d"
+    },
+    {
+      "path": "Data/Skyrim - Animations.bsa",
+      "depot": "489831",
+      "size": 65155583,
+      "sha256": "f2e1bf18f6498d637998808a06ecf17220d17d123eceddbb796eced8b68dc68a"
+    },
+    {
+      "path": "Data/Skyrim - Interface.bsa",
+      "depot": "489832",
+      "size": 105799354,
+      "sha256": "5c8d5275eeaaa87eec84c893da8dc3bf977e0197eba86560bb0d1dc651432957"
+    },
+    {
+      "path": "Data/Skyrim - Meshes0.bsa",
+      "depot": "489831",
+      "size": 1153126177,
+      "sha256": "3bcb3e42edb00aa63a06af43a6a5a092029632e9a3fdd2c90fced0cc07db5c7d"
+    },
+    {
+      "path": "Data/Skyrim - Meshes1.bsa",
+      "depot": "489831",
+      "size": 378762772,
+      "sha256": "49cc83cd6592a676481d62c8483657ac94aa51fc15c66b1a35a8f5fcbb870880"
+    },
+    {
+      "path": "Data/Skyrim - Misc.bsa",
+      "depot": "489831",
+      "size": 17713449,
+      "sha256": "ddb19908dcd5c135b8bba240e8dfcdb95395b569852f715d330396e9c1390b9d"
+    },
+    {
+      "path": "Data/Skyrim - Shaders.bsa",
+      "depot": "489832",
+      "size": 67308970,
+      "sha256": "4685203a8f115937e34fab3879c6b599734d8a913a698891866ed72385b5cfa5"
+    },
+    {
+      "path": "Data/Skyrim - Sounds.bsa",
+      "depot": "489831",
+      "size": 1538656059,
+      "sha256": "196368d2987887e65c9687191373f9e57ceb3f931a959350552fda924d33ef84"
+    },
+    {
+      "path": "Data/Skyrim - Textures0.bsa",
+      "depot": "489832",
+      "size": 652490581,
+      "sha256": "47ce44b6c8265153875f6a52aa5dada1890ce6b22ae527c448270ffbf26c90ef"
+    },
+    {
+      "path": "Data/Skyrim - Textures1.bsa",
+      "depot": "489832",
+      "size": 1511492648,
+      "sha256": "92516f098211f961ff2bbe8b398d546d5dd62deea789f60a46e1b749c1e758f2"
+    },
+    {
+      "path": "Data/Skyrim - Textures2.bsa",
+      "depot": "489832",
+      "size": 1345109830,
+      "sha256": "ebbbd4998a05ae520ce16a67ad27834487e4989f7b87aa5360acfcd95b5cc2b7"
+    },
+    {
+      "path": "Data/Skyrim - Textures3.bsa",
+      "depot": "489832",
+      "size": 1406304717,
+      "sha256": "ad1557a02b7a2922f314c10c1c957ee09aea0be3732274cf737502929a6ba1b5"
+    },
+    {
+      "path": "Data/Skyrim - Textures4.bsa",
+      "depot": "489832",
+      "size": 1265325033,
+      "sha256": "53fe60b2831cd49f9d73ed36779ced234a310e0f76f229dd9d53ffa5c8c02bdf"
+    },
+    {
+      "path": "Data/Skyrim - Textures5.bsa",
+      "depot": "489832",
+      "size": 813639992,
+      "sha256": "f6cf263cd3753f2921c1a0e7d40aa10a37625cee3ba92e7d2bb8ce3b0147bf80"
+    },
+    {
+      "path": "Data/Skyrim - Textures6.bsa",
+      "depot": "489832",
+      "size": 97210200,
+      "sha256": "4ec70fe57e45d8331c70c47a037a619e08e2d663500a5607a7abde6f0da44cab"
+    },
+    {
+      "path": "Data/Skyrim - Textures7.bsa",
+      "depot": "489832",
+      "size": 677006639,
+      "sha256": "a494c65fe3472ea9898bfe8f30b651ae1a840fbb1099d2561898194d0551aeb3"
+    },
+    {
+      "path": "Data/Skyrim - Textures8.bsa",
+      "depot": "489832",
+      "size": 255927303,
+      "sha256": "31fb46d6aa2cdd4d7124063fa7ee77831448dee19ad8fb69793679cb9540af94"
+    },
+    {
+      "path": "Data/Skyrim - Voices_en0.bsa",
+      "depot": "489831",
+      "size": 1807969854,
+      "sha256": "28eed50cac2f9606e045420e4426f6141de0b900f7e1ba021adc41bb8c9f1d08"
+    },
+    {
+      "path": "Data/Skyrim.esm",
+      "depot": "489832",
+      "size": 249753412,
+      "sha256": "2bbc77fdec35a70ef96b710f8c525e50a1db9e63e11a391a0eb9ee8f56d36107"
+    },
+    {
+      "path": "Data/Update.esm",
+      "depot": "489832",
+      "size": 18874041,
+      "sha256": "c1795e0a1218da45dbfd523f064f1857b42805c49714c46091e75277e525aed9"
+    },
+    {
+      "path": "Data/Video/BGS_Logo.bik",
+      "depot": "489831",
+      "size": 13835808,
+      "sha256": "21fda4c1c5964142aaa9366acc29c6c19b3633ba80afdac24e82ec714cf2c58d"
+    },
+    {
+      "path": "High.ini",
+      "depot": "489832",
+      "size": 906,
+      "sha256": "2413dc2f7cbf4551d9c6686780dfd20664c68604cab764604e30daa648606f95"
+    },
+    {
+      "path": "installscript.vdf",
+      "depot": "489831",
+      "size": 648,
+      "sha256": "7efd0fbe1a3cf1f0fbfa20158f3abe91881929ac58a88836f62fe75bbcf9abf7"
+    },
+    {
+      "path": "Low.ini",
+      "depot": "489832",
+      "size": 898,
+      "sha256": "f045a0165b9d09d167ea11a228401e21c517497d0a333939db0a2e9ab7a25c9b"
+    },
+    {
+      "path": "Medium.ini",
+      "depot": "489832",
+      "size": 898,
+      "sha256": "e5cb56c29c28a0e57055b75bf3153c6e7d8510100f656b490fadd3b9bdffc5fe"
+    },
+    {
+      "path": "Skyrim_Default.ini",
+      "depot": "489832",
+      "size": 1859,
+      "sha256": "61c151bc60d5d737dad3d65a99a48d9bb8b50812b6b9f1f993323f0337813fa8"
+    },
+    {
+      "path": "Skyrim.ccc",
+      "depot": "489832",
+      "size": 2035,
+      "sha256": "abdbd029c2aaf1c401c7537ae8bd9201258eb68a36f0513253c54d7c0e244a3b"
+    },
+    {
+      "path": "Skyrim/SkyrimPrefs.ini",
+      "depot": "489832",
+      "size": 3498,
+      "sha256": "2636ec3d1d307913b62c06d13b5548ff2243058b96d8a242488b4ffe243f5fa2"
+    },
+    {
+      "path": "SkyrimSE.exe",
+      "depot": "489833",
+      "size": 37157144,
+      "sha256": "c434208894f07f604b852f29b8edc3a58c4de63de783373733e72b2b73f33be9"
+    },
+    {
+      "path": "SkyrimSELauncher.exe",
+      "depot": "489832",
+      "size": 4713472,
+      "sha256": "ce2a1b3f9727c8b53ffb8e0bccd2bbed2bd8bec47b0ab8552c2850caa05e68b1"
+    },
+    {
+      "path": "steam_api64.dll",
+      "depot": "489832",
+      "size": 298384,
+      "sha256": "1db3fd414039d3e5815a5721925dd2e0a3a9f2549603c6cab7c49b84966a1af3"
+    },
+    {
+      "path": "Ultra.ini",
+      "depot": "489832",
+      "size": 911,
+      "sha256": "10dc00f0dae7783e2f904eabf68be09e4c2460ec1edd30a6231f22b47b847000"
+    }
+  ]
+}
